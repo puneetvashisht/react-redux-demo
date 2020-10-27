@@ -1,6 +1,5 @@
 import React, { Component } from 'react'
-import { connect } from 'react-redux';
-import * as actionCreators from './actions/actions';
+
 
 class AddEmployee extends Component {
     constructor() {
@@ -15,7 +14,7 @@ class AddEmployee extends Component {
     handleSubmit(event) {
         console.log('A name was submitted: ' + this.name.current.value);
         console.log('A name was submitted: ' + this.salary.current.value);
-        this.props.onAddEmployee({ name:  this.name.current.value, salary:this.salary.current.value })
+       // PUSH INTO ViewEmployees state
         event.preventDefault();
       }
 
@@ -46,18 +45,5 @@ class AddEmployee extends Component {
     }
 }
 
-// export default AddEmployee;
+export default AddEmployee;
 
-const mapStateToProps = state => {
-    return {
-        employees: state.employees
-    };
-};
-
-const mapDispatchToProps = dispatch => {
-    return {
-        onAddEmployee: (payload) => dispatch(actionCreators.addEmployee(payload))
-    };
-};
-
-export default connect(mapStateToProps, mapDispatchToProps)(AddEmployee);
