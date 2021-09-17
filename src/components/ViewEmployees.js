@@ -30,7 +30,8 @@ class ViewEmployees extends Component {
         })
 
         return (
-
+<>
+<h2>View Employees</h2>
             <table className="table">
                 <thead>
                     <tr>
@@ -46,7 +47,7 @@ class ViewEmployees extends Component {
                 </tbody>
             </table>
 
-
+</>
         );
     }
 }
